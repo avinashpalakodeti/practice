@@ -6,7 +6,10 @@ class Paginator(object):
 
 	
 	def total_pages(self):
-		print self.items/self.items_per_page
+		if(self.items%self.items_per_page==0):
+			print self.items/self.items_per_page
+		else:
+			print (self.items/self.items_per_page)+1
 
 
 	def total_items(self):
@@ -19,12 +22,14 @@ class Paginator(object):
 	def next_page(self):
 		pass
 
-	def page_items(self,page_no):
-		for items in (self.mylist[:2],self.mylist[2:4],self.mylist[4:6],self.mylist[6:8],self.mylist[8:10]):
-			print items
-page=Paginator(10,2)
+	def page_items(self,page_no,mylist):
+		print mylist
+		for ind,itm in enumerate(mylist):
+			print("x["+str(ind)+"]="+str(itm)) 
+
+page=Paginator(0,5)
 page.total_pages()
 page.total_items()
-page.page_items(2)
+page.page_items(2,page.mylist)
 
 
