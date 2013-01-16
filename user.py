@@ -29,6 +29,12 @@ class User(db.Model):
 		person.delete()
 		return person
 
+	@classmethod
+	def update(cls,uname):
+		u = User.get(uname)
+		print u.username
+		u.put()
+
 
 
 

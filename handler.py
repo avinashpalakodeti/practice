@@ -24,6 +24,7 @@ class Data(BaseHandler):
 
         if b == a:
             self.response.write("already exists")
+
         else:
             self.response.write("created")
             User.create(b)
@@ -36,5 +37,9 @@ class Data(BaseHandler):
         else:
             print "username didnt exist"
 
-        
+        if b == a:
+            g=User.update(f)
+            print "updated"
+
+    
 
